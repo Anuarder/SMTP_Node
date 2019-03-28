@@ -12,10 +12,13 @@ module.exports = {
                     user: "admin@keocs.kz",
                     pass: "Cooldog0303$"
                 },
+                tls: {
+                    rejectUnauthorized: false
+                }
             });
             let message = {
                 from: "admin@keocs.kz",
-                to: req.body.email,
+                to: "anuar.ibraev97@gmail.com",
                 subject: req.body.subject,
                 text: req.body.message,
                 html: `<p>${req.body.message}</p>`
@@ -42,10 +45,13 @@ module.exports = {
                     user: "admin@keocs.kz",
                     pass: "Cooldog0303$"
                 },
+                tls: {
+                    rejectUnauthorized: false
+                }
             });
             let message = {
                 from: "admin@keocs.kz",
-                to: req.body.email,
+                to: 'anuar.ibraev97@gmail.com',
                 subject: 'Заявка на звонок',
                 text: `Имя: ${req.body.name}, Телефон: ${req.body.phone}`,
                 html: `<p>Имя: ${req.body.name}</p> Телефон: <a href="tel:${req.body.phone}">${req.body.phone}</a>`
