@@ -21,7 +21,7 @@ module.exports = {
                 to: "anuar.ibraev97@gmail.com",
                 subject: req.body.subject,
                 text: req.body.message,
-                html: `<p>${req.body.message}</p>`
+                html: `<p>${req.body.message.toString()}</p>`
             };
             
             await transporter.sendMail(message);
@@ -63,6 +63,14 @@ module.exports = {
                 message: "Message has been sent"
             });
         } catch (err) {
+            console.log(err);
+            res.status(400).send(err);
+        }
+    },
+    async sayHello(req, res){
+        try{
+            res.send("<h1>All work</h1>");
+        }catch(err){
             console.log(err);
             res.status(400).send(err);
         }
